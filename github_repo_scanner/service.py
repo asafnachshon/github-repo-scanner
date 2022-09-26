@@ -22,7 +22,6 @@ __all__ = ["Service"]
 
 def main():
     app = Service()
-    os.environ["PORT"] = "8080"
     _tornado = HTTPServer(app)
     _tornado.bind(port=int(os.getenv("PORT")), address="0.0.0.0")
     _tornado.start(num_processes=1)
