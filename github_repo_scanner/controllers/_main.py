@@ -21,7 +21,7 @@ class Main(tornado.web.RequestHandler, metaclass=ABCMeta):
 
     def write_error(self, *args, **kwargs):
         self.set_status(args[0])
-        self.finish(chunk=kwargs["exc_info"][1].log_message)
+        self.finish(chunk=str(kwargs["exc_info"][1]))
 
     def log_exception(self, typ, value, tb):
         pass

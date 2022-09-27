@@ -1,6 +1,6 @@
 FROM python:3.9.10
 
-RUN apt update  && yes | apt upgrade
+RUN python -m pip install --upgrade pip
 
 COPY github_repo_scanner /home/github_repo_scanner
 COPY setup.py /home/

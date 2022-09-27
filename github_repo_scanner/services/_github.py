@@ -12,10 +12,9 @@ def get_repo_sha(owner, repo):
 
 def get_repo_tree(owner, repo):
     sha = get_repo_sha(owner=owner, repo=repo)
-    response = http_get(
+    return http_get(
         url=f"{os.getenv('GITHUB_HOST')}/repos/{owner}/{repo}/git/trees/{sha}?recursive=False"
     )
-    return response
 
 
 __all__ = ["get_repo_tree"]
